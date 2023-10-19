@@ -12,16 +12,20 @@ def check_pixel_color(image, target_color):
         for y in range(height):
             # Получить цвет пикселя
             pixel = img.getpixel((x, y))
+            # print(pixel)
             if pixel == target_color:
-                print("Цвет найден!")
-                return 1;
+            # if (target_color[0] - 3 <= pixel[0] <= target_color[0] + 3) and (target_color[1] - 3 <= pixel[1] <= target_color[1] + 3) and (target_color[2] - 3 <= pixel[2] <= target_color[2] + 3):
+            #     # print("Цвет найден!")
+                return 1
     print("Цвет не найден!") #опциональные выводы
     return 0;
                 
 
 def main():
-    check_pixel_color('image1.png', (167, 92, 42))
+    # Проверить цвета, тут можно протестить
     check_pixel_color('image2.png', (167, 92, 42))
-    check_pixel_color('image3.png', (167, 92, 42))
+    check_pixel_color('image2.png', (234, 234, 235))
+    check_pixel_color('image2.png', (209, 178, 152))
+    check_pixel_color('image2.png', (180, 142, 115))
 if __name__ == '__main__':
     main()
