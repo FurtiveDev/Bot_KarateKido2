@@ -17,11 +17,18 @@ def get_cords(): # с помощью данной функции получае�
 def main():
     global wood_lower
     screenGrab()
-    wood_middle = check_pixel_color('image2.png', (167, 92, 42))
-    metal_middle = check_pixel_color('image2.png', (104, 114, 143))
-    semi_metal_middle = check_pixel_color ('image2.png', (209, 178, 152))
-    some_material = check_pixel_color('image2.png', (129, 113, 130))
-    ice = check_pixel_color('image2.png', (234, 234, 235))
+    wood_middle = check_pixel_color('image2.png', (211, 135, 85))
+    if not wood_middle:
+        metal_middle = check_pixel_color('image2.png', (133, 142, 164))
+        if not metal_middle:
+                metal_middle = check_pixel_color('image2.png', (132, 141, 164))
+        semi_metal_middle = check_pixel_color ('image2.png', (209, 178, 153))
+        if not semi_metal_middle:
+                semi_metal_middle = check_pixel_color('image2.png', (209, 178, 152))
+        some_material = check_pixel_color('image2.png',(170, 150, 171))
+    ice = check_pixel_color('image1.png', (240, 239, 239))
+    if not ice :
+        ice = check_pixel_color('image1.png', (245, 243, 243))
     if wood_middle or metal_middle or semi_metal_middle or some_material:
         click(927, 568)
         if ice:
